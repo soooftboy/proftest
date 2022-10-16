@@ -17,19 +17,12 @@ window.onload = function() {
 	let specializationItTwo = '09.02.01 Компьютерные системы и комплексы';
 	let specializationDocumentologist = '46.02.01 Документационное обеспечение управления и архивоведение';
 
-	let answer = new Array(0);
-
-	for (let i = 0; i<7; i++) {
-		let j = i + 1;
-		answer[i] = localStorage.getItem(`answer${j}`)
-	}
-
-	for(let i = 0; i < 7; i++) {
-		if (answer[i] === 'electronic') {
+	for(let i = 1; i < 8; i++) {
+		if (localStorage.getItem(`answer${i}`) === 'electronic') {
 			electronic++;
-		} else if (answer[i] === 'it') {
+		} else if (localStorage.getItem(`answer${i}`) === 'it') {
 			it++;
-		} else if (answer[i] === 'documentologist'){
+		} else if (localStorage.getItem(`answer${i}`) === 'documentologist'){
 			documentologist++;
 		}
 	}
