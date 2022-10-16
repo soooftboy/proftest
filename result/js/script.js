@@ -57,9 +57,7 @@ window.onload = function() {
 
 
 	else {
-		document.querySelector('#result-answer-two').remove();
-		document.querySelector('#specialization-second-one').remove();
-		document.querySelector('#specialization-second-two').remove();
+		document.querySelector('.second-answer').remove();
 
 		if (it > electronic && it > documentologist) {
 			document.querySelector('#result-answer').innerHTML = answerIt;

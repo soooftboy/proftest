@@ -108,7 +108,7 @@ header svg {
 }
 
 
-.answer:not(:first-child) {
+.second-answer {
 	margin-top: 30px;
 }
 
