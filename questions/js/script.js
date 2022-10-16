@@ -1,14 +1,24 @@
-window.onload = function() {
-    let pageNumber = document.location.href
+let pageNumber = document.location.href
         .split('/').pop()
         .split('question-')[1]
         .split('.html')[0];
-    localStorage.setItem('pageNumber', pageNumber);
-};
 
-function nextPage(el) {
-    let pageNumber = localStorage.getItem('pageNumber');
-    localStorage.setItem(`answer${pageNumber}`, el.id);
+// function nextPage(el) {
+//     localStorage.setItem(`answer${pageNumber}`, el.id);
+//     if (pageNumber === '7') {
+//         window.location.href=`../result/index.html`;
+//     } else {
+//         pageNumber++;
+//         window.location.href=`question-${pageNumber}.html`;
+//     }
+// }
+
+console.log(document.querySelector('.answer'));
+
+
+
+document.querySelector('#documentologist').onclick = () => {
+    localStorage.setItem('documentologist', +localStorage.getItem('documentologist') + 1);
     if (pageNumber === '7') {
         window.location.href=`../result/index.html`;
     } else {
@@ -17,12 +27,34 @@ function nextPage(el) {
     }
 }
 
-function prevPage() {
-    let pageNumber = localStorage.getItem('pageNumber');
-    if (pageNumber === '1') {
-        window.location.href=`../index.html`;
+document.querySelector('#electronic').onclick = () => {
+    localStorage.setItem('electronic', +localStorage.getItem('electronic') + 1);
+    if (pageNumber === '7') {
+        window.location.href=`../result/index.html`;
     } else {
-        pageNumber--;
+        pageNumber++;
         window.location.href=`question-${pageNumber}.html`;
+    }
+}
+
+document.querySelector('#it').onclick = () => {
+    localStorage.setItem('it', +localStorage.getItem('it') + 1);
+    if (pageNumber === '7') {
+        window.location.href=`../result/index.html`;
+    } else {
+        pageNumber++;
+        window.location.href=`question-${pageNumber}.html`;
+    }
+}
+
+
+document.querySelector('.question__back').onclick = () => {
+    function prevPage() {
+        if (pageNumber === '1') {
+            window.location.href=`../index.html`;
+        } else {
+            pageNumber--;
+            window.location.href=`question-${pageNumber}.html`;
+        }
     }
 }

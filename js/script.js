@@ -1,5 +1,8 @@
 function openPage() {
     let name = document.querySelector('#name').value.trim();
+    localStorage.setItem('it', 0);
+    localStorage.setItem('electronic', 0);
+    localStorage.setItem('documentologist', 0);
     if(name === '') {
         alert('Пожалуйста, введите имя');
         return false;

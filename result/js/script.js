@@ -2,11 +2,6 @@ window.onload = function() {
 	let userName = localStorage.getItem('userName');
 	document.querySelector('#your-name').innerHTML = userName;
 
-
-	let electronic = 0;
-	let it = 0;
-	let documentologist = 0;
-
 	let answerElectronic = '"Электроника"';
 	let answerIt = '"Информатика и ВТ"';
 	let answerDocumentologist = '"ДОУ и Юриспруденция"';
@@ -17,15 +12,11 @@ window.onload = function() {
 	let specializationItTwo = '09.02.01 Компьютерные системы и комплексы';
 	let specializationDocumentologist = '46.02.01 Документационное обеспечение управления и архивоведение';
 
-	for(let i = 1; i < 8; i++) {
-		if (localStorage.getItem(`answer${i}`) === 'electronic') {
-			electronic++;
-		} else if (localStorage.getItem(`answer${i}`) === 'it') {
-			it++;
-		} else if (localStorage.getItem(`answer${i}`) === 'documentologist'){
-			documentologist++;
-		}
-	}
+
+	let electronic = localStorage.getItem('electronic');
+	let it = localStorage.getItem('it');
+	let documentologist = localStorage.getItem('documentologist');
+
 
 	if ((electronic === it && electronic > documentologist) ||
 		(electronic === documentologist && electronic > it) ||
